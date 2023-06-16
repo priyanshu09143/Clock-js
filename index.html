@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Analog Watch</h1>
+    <div class="clock-container">
+        <div class="hour">
+            
+        </div>
+        <div class="minutes">
+            
+        </div>
+        <div class="second">
+
+        </div>
+    </div>
+    
+    <script>
+        let hour_head = document.querySelector(".hour")
+        let minute_head = document.querySelector(".minutes")
+        let second_head = document.querySelector(".second")
+        setInterval(()=>{
+            let date = new Date();
+           let hour = date.getHours()
+           let minutes = date.getMinutes()
+           let second = date.getSeconds()
+           Hcircle = 30*hour + minutes/2;
+           Mcircle =6*minutes;
+           Scircle =6*second;
+           hour_head.style.transform ="rotate("+Hcircle+"deg)"
+           minute_head.style.transform ="rotate("+Mcircle+"deg)"
+           second_head.style.transform ="rotate("+Scircle+"deg)"
+
+        },100)
+    </script>
+</body>
+</html>
